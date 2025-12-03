@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Event Management</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+        }
+        header {
+            background: #d62828;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        nav {
+            background: #9c1d1d;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        section {
+            padding: 40px;
+        }
+        h2 {
+            color: #d62828;
+        }
+        .event, .booking, .testimonial {
+            background: white;
+            padding: 20px;
+            border-left: 5px solid #d62828;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .event img, .testimonial img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+        }
+        button {
+            background: #d62828;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #b81f1f;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎉 Elite Event Management</h1>
+    <p>We create unforgettable experiences.</p>
+</header>
+
+<nav>
+    <a href="#events">Events</a>
+    <a href="#booking">Booking Info</a>
+    <a href="#testimonials">Testimonials</a>
+</nav>
+
+<!-- EVENT LISTINGS -->
+<section id="events">
+    <h2>Upcoming Events</h2>
+
+    <div class="event">
+        <h3>Corporate Annual Gala</h3>
+        <p>Date: April 14, 2025</p>
+        <p>A luxurious evening with networking, entertainment, and gourmet dinner.</p>
+        <img src="https://images.unsplash.com/photo-1515169067865-5387ec356754" alt="Corporate Event">
+    </div>
+
+    <div class="event">
+        <h3>Wedding Ceremony & Reception</h3>
+        <p>Date: June 8, 2025</p>
+        <p>Beautiful wedding planning with decoration, photography, and catering.</p>
+        <img src="https://images.unsplash.com/photo-1529634806980-cf3fdf18f0cb" alt="Wedding Event">
+    </div>
+
+    <div class="event">
+        <h3>Music Festival</h3>
+        <p>Date: July 21, 2025</p>
+        <p>A fun-filled day with live bands, food stalls, and energetic performances.</p>
+        <img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf" alt="Music Festival">
+    </div>
+</section>
+
+<!-- BOOKING INFORMATION -->
+<section id="booking">
+    <h2>Booking Information</h2>
+
+    <div class="booking">
+        <p>Interested in hosting an event? Fill out the form below and our team will contact you.</p>
+
+        <label>Your Name:</label>
+        <input type="text" id="name">
+
+        <label>Email:</label>
+        <input type="email" id="email">
+
+        <label>Type of Event:</label>
+        <input type="text" id="eventType" placeholder="Wedding, Corporate, Birthday, etc">
+
+        <label>Details:</label>
+        <textarea id="details" rows="4"></textarea>
+
+        <button onclick="submitBooking()">Submit Booking Request</button>
+    </div>
+
+    <p id="bookingMessage" style="color: green; margin-top: 15px;"></p>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+    <h2>Client Testimonials</h2>
+
+    <div class="testimonial">
+        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91" alt="Client Photo">
+        <h3>Sarah Williams</h3>
+        <p>"Elite Event Management planned our wedding perfectly! Everything was magical."</p>
+    </div>
+
+    <div class="testimonial">
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d" alt="Client Photo">
+        <h3>Michael Thompson</h3>
+        <p>"Their corporate event service was top-notch. Professional and organized!"</p>
+    </div>
+
+    <div class="testimonial">
+        <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4" alt="Client Photo">
+        <h3>Emily Johnson</h3>
+        <p>"They handled our music festival flawlessly. Highly recommended!"</p>
+    </div>
+</section>
+
+<script>
+    function submitBooking() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let type = document.getElementById("eventType").value;
+        let details = document.getElementById("details").value;
+
+        if (!name || !email || !type || !details) {
+            alert("Please fill in all fields!");
+            return;
+        }
+
+        document.getElementById("bookingMessage").innerText =
+            "Thank you " + name + "! Your request for a " + type + 
+            " event has been received. We will contact you soon.";
+    }
+</script>
+
+</body>
+</html>
